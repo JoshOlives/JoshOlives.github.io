@@ -1,0 +1,216 @@
+/* GLOBAL STYLES */
+
+/* comma is like 'and' */
+/* mini reset
+html,
+body {
+    margin: 0;
+    padding: 0;
+} */
+
+/*h1 {
+            border: 1px solid #000;
+      width: 50%;
+      margin: 10%;
+      font-size: 1rem;
+      padding: 15px;
+    } */
+
+h1 {
+    font-size: 7vw;
+    margin-top: 0;
+}
+
+a {
+    color: rgba(196, 0, 70, 0.75);
+}
+
+body {
+    background: rgba(249, 127, 245, 0.05);
+    font-family: helvetica, arial, sans-serif;
+    /*height: 2500px;*/
+    /* the 62.5% trick to make default font 10px and make fractions easier
+      best if avoided
+      font-size: 62.5%; */
+}
+
+h2 {
+    /*font-size: 50px;*/
+}
+
+html {
+    /*font-size: 18px;*/
+}
+
+/* HEADER STYLES */
+.header-nav{
+    float: right;
+    padding: 5.5vh 60px 0 0;
+}
+.header-nav > li {
+    display: inline-block;
+    margin-left: 1em;
+}
+.header-nav a{
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+/* SOCIAL STYLES */
+
+.social {
+    color: white;
+    background: rgba(56, 23, 21, 0.30);
+    box-sizing: border-box;
+    /* inline-block allows to format like block in some ways but keep it inline with text */
+    display: inline-block;
+    border-radius: 1009px;
+    font-family: helvetica, arial, sans;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2.5em;
+    line-height: 1;
+    padding-top: 0.85em;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 2.5em;
+}
+
+.show {
+    display: block;
+}
+
+/* BIO STYLES */
+
+.bio-wrapper {
+    font-size: 100px;
+    /* for overflow can use hidden, visible, or scroll */
+    overflow: hidden;
+    background-color: #c0e0c3;
+    max-width: 960px;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 100px;
+    /* could use clear: both; for content below but this better 
+      overflow: hidden;
+       not good if need to define height cause content can get cutt off*/
+}
+
+/* styling for what happens after .bio-wrapper */
+
+/*can use if need to define height instead of overflow: hidden; */
+
+/*.bio-wrapper:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    } */
+
+.bio-box {
+    border: 1px solid #000;
+    border-color: rgba(50, 20, 150, 0.5) black blue rgba(50, 10, 20, 0.3);
+    box-sizing: border-box;
+    float: left;
+    width: 23%;
+    font-size: 1rem;
+    padding: 2%;
+    margin: 40px 1% 0px;
+    /*font-size: 150%;*/
+}
+
+.bio-box img {
+    width: 100%;
+}
+.bio-box .social{
+    display: block;
+    margin: 2em 0 1em; /* better spacing for social links */
+}
+.bio-box h3 {
+    color: #0f0;
+    margin: -40px 0 1em;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.bio-copy p {
+    margin-bottom: 0px;
+}
+
+.bio-copy {
+    line-height: 1.5;
+    /* spacing inbetween lines */
+    font-size: 1em;
+}
+
+.bio-copy a {
+    color: #0b0;
+    /* padding: 20px; */
+}
+
+/*overtakes in specificity */
+
+/* .bio-box > a {
+      color: #c68bf9;
+    } 
+    .bio-box .social{
+      text-align: center; /* margin: auto; doesnt work cause not a block 
+    }
+    div.bio-box {
+        border: 1px solid #0b0;
+      }*/
+
+/* apparently social-link is already a default class*/
+
+/* HERO STYLES */
+
+.full-hero {
+    background-color: #c7dbfc;
+    height: 25vw;
+    width: 70vw;
+    margin: auto;
+    text-align: center;
+}
+
+.social-list {
+    padding: 0;
+}
+
+.full-hero ul {
+    /* HOW DO I MOVE THE BULLETS W/ TEXT? Just removed them for the meanwhile*/
+    list-style-type: none;
+    /* list-style-position: 0px; */
+}
+
+/* " > " selects only direct children */
+
+.social-lists>li {
+    /*figure out how to remove spacings when display is inline */
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+/* TEST BOX */
+
+.test-box {
+    background: #9db6dd;
+    margin: 50px;
+    width: 200px;
+}
+
+.test-box-nosizing {
+    border: 10px solid #000;
+    padding: 40px;
+}
+
+.test-box-sizing {
+    /* box-sizing make sure padding and border are within box (width of content) */
+    box-sizing: border-box;
+    margin-top: 75px;
+    width: auto;
+}

@@ -1,6 +1,7 @@
 /* GLOBAL STYLES */
 
 /* comma is like 'and' */
+
 /* mini reset
 html,
 body {
@@ -17,15 +18,21 @@ body {
     } */
 
 h1 {
-    text-align: center;
     font-size: 7vw;
-    width: 100%; /*what?*/
+    margin-top: 0;
 }
 
 a {
-    color: rgba(196, 0, 70, 1);
+    color: #6397b5;
 }
 
+p {
+    /* space between the lines */
+    line-height: 1.5;
+}
+h2 {
+    font-size: 2em;
+}
 body {
     background: rgba(249, 127, 245, 0.05);
     font-family: helvetica, arial, sans-serif;
@@ -34,84 +41,95 @@ body {
       best if avoided
       font-size: 62.5%; */
 }
-
-h2 {
-    /*font-size: 50px;*/
-}
-
 html {
     /*font-size: 18px;*/
-    /* why is a aking an annoying line of space between box shadow and body!important!important?!important */
+    /* why is there an annoying line of space between box shadow and body!important!important?!important */
     box-shadow: 0 0 0 30px #000 inset;
     padding: 0px 30px;
     /*position: absolute;
     z-index: 50;*/
 }
-h2 ~ p{
+
+h2~p {
     font-size: 0.8em;
     font-style: italic;
     margin: 1em auto 0;
     max-width: 70%;
     text-align: center;
 }
+
 /* HEADER STYLES */
+
 .header {
-  background-color: #000;
-  color: #fff;
-  position: fixed;
-  width: 100%;
-  z-index: 53;
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 53;
 }
+
 .header-logo {
-  background-color: #000;
-  box-sizing: border-box;
-  display: block;
-  height: 10vh;
-  padding-top: 10px;
-  position: relative;
-  text-align: center;
-  width: 10vh;
-  left: -30px;
+    background-color: #000;
+    box-sizing: border-box;
+    display: block;
+    height: 10vh;
+    padding-top: 10px;
+    position: relative;
+    text-align: center;
+    width: 10vh;
+    left: -30px;
 }
+
 .header-logo:hover,
 .header-logo:active {
-  background-color: #ed6e2f;
+    background-color: #ed6e2f;
 }
+
 .header-logo img {
-  width: 4.3vh;
+    width: 4.3vh;
 }
+
 .header-nav {
-  float: right;
-  padding: 5.5vh 60px 0 0;
+    float: right;
+    padding: 5.5vh 60px 0 0;
 }
-.header-nav > li {
-  display: inline-block;
-  margin-left: 1em;
+
+.header-nav>li {
+    display: inline-block;
+    margin-left: 1em;
 }
-.header-nav > li ~ li {
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  padding-left: 1em;
+
+.header-nav>li~li {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    padding-left: 1em;
 }
+
 .header-nav a {
-  color: #fff;
+    color: #fff;
 }
+
 .nav-links a {
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
 }
+
 .nav-links a:hover,
 .nav-links a:active {
-  color: #ed6e2f;
+    color: #ed6e2f;
 }
-.header-nav > li:first-child a {
-  color: #ed6e2f;
+
+.header-nav>li:first-child a {
+    color: #ed6e2f;
 }
-.header-nav > li:first-child a:hover {
-  color: #fff;
+
+.header-nav>li:first-child a:hover {
+    color: #fff;
 }
+
 /* FOOTER STYLES */
+
 .footer {
     background-color: #000;
     padding: 5vh 0px 7vh 0px;
@@ -121,36 +139,42 @@ h2 ~ p{
     left: -0.05%;
     width: 100.1%;
 }
+
 .footer-logo img {
     width: 50px;
 }
+
 .footer h3 {
     color: #fff;
     padding-top: 1.5em;
     text-transform: uppercase;
 }
+
 .footer h3 span {
     color: #aaa;
 }
+
 .footer-nav li {
-    display:inline-block;
+    display: inline-block;
     margin: 2em 1em 0;
 }
+
 .footer-nav a {
     color: #ccc;
 }
-.footer .social{
-    padding-top: 0.75em;
+.footer .social {
     margin-top: 0.5em;
-    padding-right: 0.1em;
-    padding-left: 0.1em;
+    /*padding-right: 0.1em;
+    padding-left: 0.1em;*/
 }
+
 /* SOCIAL STYLES */
 
 .social {
     color: white;
     background: rgba(56, 23, 21, 0.30);
     box-sizing: border-box;
+    /* what does this do exactly again? */
     /* inline-block allows to format like block in some ways but keep it inline with text */
     display: inline-block;
     border-radius: 50px;
@@ -159,15 +183,17 @@ h2 ~ p{
     font-weight: bold;
     height: 2.5em;
     line-height: 1;
-    padding-top: 0.85em;
+    padding-top: 0.8em;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
     width: 2.5em;
 }
-.social:hover{
+
+.social:hover {
     background-color: blue;
 }
+
 .show {
     display: block;
 }
@@ -175,14 +201,9 @@ h2 ~ p{
 /* BIO STYLES */
 
 .bio-wrapper {
-    font-size: 100px;
     /* for overflow can use hidden, visible, or scroll */
     overflow: hidden;
-    background-color: #c0e0c3;
-    max-width: 960px;
-    margin: auto;
-    margin-top: 0;
-    margin-bottom: 100px;
+    /*background-color: #c0e0c3;*/
     /* could use clear: both; for content below but this better 
       overflow: hidden;
        not good if need to define height cause content can get cutt off*/
@@ -202,29 +223,31 @@ h2 ~ p{
     } */
 
 .bio-box {
-    border: 1px solid #000;
-    border-color: rgba(50, 20, 150, 0.5) black blue rgba(50, 10, 20, 0.3);
     box-sizing: border-box;
     float: left;
-    width: 23%;
+    width: 33.333%;
     font-size: 1rem;
-    padding: 2%;
-    margin: 40px 1% 0px;
+    padding: 0 3%;
+    margin: 6rem 0 0;
     /*font-size: 150%;*/
 }
 
 .bio-box img {
     width: 100%;
 }
-.bio-box .social{
+
+.bio-box .social {
     display: block;
-    margin: 2em 0 1em; /* better spacing for social links */
+    margin: 2em auto 1em;
+    /* better spacing for social links */
 }
+
 .bio-box h3 {
-    color: #0f0;
+    color: #fff;
     margin: -40px 0 1em;
     font-size: 1.5em;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .bio-copy p {
@@ -232,9 +255,7 @@ h2 ~ p{
 }
 
 .bio-copy {
-    line-height: 1.5;
-    /* spacing inbetween lines */
-    font-size: 1em;
+    font-size: 0.75em;
 }
 
 .bio-copy a {
@@ -258,23 +279,59 @@ h2 ~ p{
 
 /* HERO STYLES */
 
-.full-hero ul {
-    /*position: absolute;*/
-    bottom: 5px;
-    right: 5px;
-}
 .full-hero:active {
-    background-color: red;
+    background-image: none;
 }
+
 .full-hero {
     /*position: relative;*/
     background-color: #c7dbfc;
-    height: 25vw;
-    width: 70vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
     margin: auto;
     text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top; /*x,y takes %'s too */
 }
-
+.full-hero:after {
+    /* for lines below is triangle trick instead of using "﹀" */
+    border: 10px solid;
+    border-color: #fff transparent transparent;
+    height: 0;
+    width: 0;
+    bottom: 2vh;
+    color: #fff;
+    content: "";
+    font-size: 36px;
+    left: 50%;
+    position: absolute; /*when static arrow is not below hero, why? cause its inline not block?? */
+    transform: translate(-50%, 0);
+}
+.hero-home {
+    background-image: url(/images/shark.jpg);
+}
+.hero-content {
+    color: #fff;
+    position: relative;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.hero-content h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 7vw;
+    margin-bottom: 0.25em;
+}
+.hero-content .social {
+    background-color: rgba(255,255,255,0.8);
+    color: #557c83;
+}
+.hero-content .social:hover {
+    background-color: #000;
+    color: #fff;
+}
 .social-lists {
     padding: 0px;
     /*position: relative; why does relatice position change the position compared to when static? */
@@ -282,8 +339,11 @@ h2 ~ p{
 }
 
 .full-hero ul {
+    /*position: absolute;*/
+    bottom: 5px;
+    right: 5px;
     /* HOW DO I MOVE THE BULLETS W/ TEXT? Just removed them for the meanwhile*/
-    list-style-type: none;
+    /*list-style-type: none; goes away with inline-block */
     /* list-style-position: 0px; */
 }
 
@@ -295,6 +355,33 @@ h2 ~ p{
     margin: 0 0.5em;
 }
 
+/* HOMEPAGE STYLES */
+.home-section {
+    margin: 6rem auto;
+    max-width: 980px;
+    width: 90vw;
+}
+.home-section h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.home-callout {
+    /* shadow box fix should probably make the fix its own class*/
+    position: relative;
+    left: -0.05%;
+    width: 100.1%;
+    background-color: #000;
+    color: #fff;
+    padding: 7vh 0;
+}
+.callout-title {
+    font-size: 5.75vw;
+    text-align: right;
+    text-transform: uppercase;
+}
+.callout-copy {
+    font-size: 0.9rem;
+}
 /* TEST BOX */
 
 .test-box {

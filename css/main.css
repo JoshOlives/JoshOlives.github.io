@@ -29,17 +29,31 @@ a {
 p {
     /* space between the lines */
     line-height: 1.5;
+    margin: 0.75em 0;
 }
 h2 {
     font-size: 2em;
 }
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background: rgba(249, 127, 245, 0.05);
     font-family: helvetica, arial, sans-serif;
     /*height: 2500px;*/
     /* the 62.5% trick to make default font 10px and make fractions easier
       best if avoided
       font-size: 62.5%; */
+}
+.content-container {
+    display: flex;
+    flex: 1 1 auto;
+    /*flex-direction: column; not needed with home wrapper */
+    padding-top: 10vh;
+    width: 100%;
+}
+.content-container:active{
+background-color: red;
 }
 html {
     /*font-size: 18px;*/
@@ -49,7 +63,9 @@ html {
     /*position: absolute;
     z-index: 50;*/
 }
-
+html:active {
+    box-shadow: none;
+}
 h2~p {
     font-size: 0.8em;
     font-style: italic;
@@ -67,7 +83,9 @@ h2~p {
     width: 100%;
     z-index: 53;
 }
-
+/*.header:active {
+    display: none;
+}*/
 .header-logo {
     background-color: #000;
     box-sizing: border-box;
@@ -134,10 +152,10 @@ h2~p {
     background-color: #000;
     padding: 5vh 0px 7vh 0px;
     text-align: center;
-    margin: 5vh 0 0 0;
     position: relative;
     left: -0.05%;
     width: 100.1%;
+    flex-grow: 0;
 }
 
 .footer-logo img {
@@ -243,7 +261,7 @@ h2~p {
 }
 
 .bio-box h3 {
-    color: #fff;
+    color: #000;
     margin: -40px 0 1em;
     font-size: 1.5em;
     text-align: center;
@@ -285,10 +303,12 @@ h2~p {
 
 .full-hero {
     /*position: relative;*/
+    /*width: 100%; not needed with home wrapper */
     background-color: #c7dbfc;
-    height: 100vh;
+    height: 90vh;
     box-sizing: border-box;
-    padding-top: 10vh;
+    /* move content down with padding */
+    padding-top: 20px;
     margin: auto;
     text-align: center;
     background-size: cover;
@@ -367,6 +387,9 @@ h2~p {
 }
 .home-callout {
     /* shadow box fix should probably make the fix its own class*/
+    display: flex;
+    /*flex-direction: column-reverse;*/
+    align-items: center;
     position: relative;
     left: -0.05%;
     width: 100.1%;
@@ -374,13 +397,80 @@ h2~p {
     color: #fff;
     padding: 7vh 0;
 }
+.home-callout h3 {
+    color: inherit;
+    margin-top: 1em;
+}
 .callout-title {
+    flex: 1; /* shrt hand for flex: 1 1 0 */
     font-size: 5.75vw;
     text-align: right;
     text-transform: uppercase;
 }
 .callout-copy {
-    font-size: 0.9rem;
+    flex: 0.3 0 45em;
+    padding: 0 3vw;
+    font-size: 0.8rem;
+}
+/* COLUMN STYLES */
+.col-three {
+    display: flex;
+    flex: 1;
+}
+.col {
+    box-sizing: border-box;
+    padding: 2em;
+}
+/* why do we need the ~ ?*/
+.col-three .col ~ .col{
+    border-left: 1px solid rgba(0, 0, 0 ,0.1);
+}
+.col-three .col-nav {
+    flex: 0 1 15em;
+}
+.col-three .col-content {
+    flex: 1;
+}
+/*why be able to shrink right and left side? */
+.col-three .col-aside {
+    flex: 0 1 20em;
+}
+/* GALLERY */
+.galley-thumbs {
+    height: 90vh;
+    overflow: scroll;
+}
+.gallery-thumbs > div {
+    cursor: pointer;
+}
+.gallery-thumbs img {
+    box-sizing: border-box;
+    box-shadow: 0 0 0 5px transparent;
+    display: inline-block;
+    margin: 0 0 10px;
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+.gallery-thumbs img:hover {
+    opacity: 1;
+    width: 50%;
+}
+.gallery-thumbs .current img {
+    box-shadow: 0 0 0 5px #ed6e2f;
+    opacity: 1;
+}
+.gallery-photo {
+    position: relative;
+}
+.gallery-photo img {
+    width: 100%;
+}
+.gallery-info {
+    font-size: 0.8rem;
+}
+.gallery-info h3 {
+    margin-bottom: 1em;
 }
 /* TEST BOX */
 

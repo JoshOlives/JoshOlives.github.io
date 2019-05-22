@@ -39,11 +39,13 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: rgba(249, 127, 245, 0.05);
-    font-family: helvetica, arial, sans-serif;
+    font-family: 'Open Sans', helvetica, arial, sans-serif;
     /*height: 2500px;*/
     /* the 62.5% trick to make default font 10px and make fractions easier
       best if avoided
       font-size: 62.5%; */
+      /* temp solution */
+      overflow-x: hidden;
 }
 .content-container {
     display: flex;
@@ -79,6 +81,10 @@ h4 {
   font-weight: bold;
   text-transform: uppercase;
 }
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Raleway', helvetica, sans;
+  font-weight: 100;
+}
 /* HEADER STYLES */
 
 .header {
@@ -86,7 +92,7 @@ h4 {
     color: #fff;
     position: fixed;
     width: 100%;
-    z-index: 53;
+    z-index: 50;
 }
 /*.header:active {
     display: none;
@@ -127,11 +133,12 @@ h4 {
     padding-left: 1em;
 }
 
-.header-nav a {
+.header-nav a, .drop-trigger{
     color: #fff;
 }
 
-.nav-links a {
+.nav-links a, .drop-trigger,
+.drop-title, .show-mobile-menu {
     font-size: 0.8rem;
     font-weight: bold;
     text-decoration: none;
@@ -380,7 +387,7 @@ h4 {
 }
 
 .half-hero {
-  background-position: center center;
+  background-position: center 37%;
   background-size: cover;
   height: 40vh;
 }
@@ -388,7 +395,7 @@ h4 {
 .home-section {
     margin: 6rem auto;
     max-width: 980px;
-    width: 90vw;
+    width: 90vw; /*why not width: 100%;*/
 }
 .home-section h2 {
     margin-bottom: 1.5rem;
@@ -483,10 +490,10 @@ h4 {
   margin-bottom: 1em;
 }
 /* GALLERY */
-.galley-thumbs {
+.gallery-thumbs {
     /* ignore for now but inquire */
-    height: 90vh; /*???*/
-    overflow: scroll;
+    height: 89vh; /*???*/
+    overflow: auto;
 }
 .gallery-thumbs > div {
     cursor: pointer;
@@ -613,6 +620,331 @@ h4 {
   margin-top: 3em;
   padding-top: 2em;
 }
+
+/* DROPDOWN STLES */
+
+.dropdown{
+  position: relative;
+}
+.dropdown:hover .drop-menu {
+  display:block;
+}
+/* why cant do drop-trigger:hover?? */
+.dropdown:hover .drop-trigger:after {
+  border-color: #ed6e2f transparent transparent;
+}
+.drop-trigger {
+  display: inline-block;
+  padding-right: 1.5em;
+  position: relative;
+}
+.drop-trigger:after {
+  border: 0.3em solid;
+  border-color: #fff transparent transparent;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0.3em;
+  width: 0;
+}
+.drop-menu {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  display: none;
+  list-style: none;
+  padding: 1em 0 0;
+  position: absolute;
+  right: 0;
+  z-index: 9;
+  border-radius: 0 0 5px 5px;
+}
+.drop-menu:before {
+  border: 0.6em solid;
+  border-color: transparent transparent #fff;
+  content:"";
+  height: 0;
+  position: absolute;
+  right: 1em;
+  top: -0.1em;
+  width: 0;
+}
+.drop-menu li {
+  background-color: #fff;
+}
+.drop-menu li ~ li {
+  border-top: 1px dotted rgba(0,0,0,0.1);
+}
+.drop-menu li:first-child {
+  border-radius: 5px 5px 0 0;
+  color: #999;
+  font-size: 0.5em;
+  padding: 1em 1em 0.25em;
+  text-align: right;
+}
+
+.drop-menu li:last-child a, 
+.drop-menu li:last-child {
+  /* needed to change radius of drop-meny too */
+  border-radius: 0 0 5px 5px;
+}
+.drop-menu a {
+  color: #333;
+  display: block;
+  font-weight: normal;
+  padding: 0.5em 2em 0.5em 1em;
+  text-align: left;
+  text-transform: none;
+  white-space: nowrap;
+}
+.drop-menu a:hover {
+  background-color: rgba(0,0,0,0.1) !important;
+  color: #333;
+}
+/* Hide in Footer */
+/*.footer .dropdown:hover .drop-menu,
+.footer .drop-trigger:after {
+  display: none;
+}
+.footer .drop-trigger {
+  padding-right: 0;
+} */
+/* MEH */
+.footer .drop-trigger:after {
+  border: 0.3em solid;
+  border-color: transparent transparent #ccc;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0.1em;
+  width: 0;
+}
+.footer .drop-menu li {
+  padding: 0;
+  margin: 0;
+}
+.footer .drop-menu {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  display: none;
+  list-style: none;
+  padding: 0 0 0.7rem;
+  margin: 0;
+  position: absolute;
+  right: -0.15em;
+  bottom: 1em;
+  z-index: 900;
+  border-radius: 5px 5px 0px 0px;
+  white-space: nowrap;
+  text-align: left;
+}
+.footer .drop-menu a {
+  color: #333;
+  display: block;
+  font-weight: normal;
+  padding: 0.5em 2em 0.5em 1em;
+  text-align: left;
+  text-transform: none;
+  white-space: nowrap;
+}
+.footer .dropdown:hover .drop-trigger:after {
+  border-color: transparent transparent #ed6e2f;
+}
+.footer .drop-menu:before {
+  display: none;
+}
+.footer .drop-menu:after {
+  border: 0.6em solid;
+  border-color: #fff transparent transparent;
+  content:"";
+  height: 0;
+  position: absolute;
+  right: 1em;
+  bottom: -0.5em;
+  width: 0;
+  z-index: 999;
+}
+
+.footer .drop-menu li:first-child {
+  /* needed to change radius of drop-meny too */
+  order: -5;
+  padding: 2px 5px 5px 0;
+  border-radius: 0 0 5px 5px;
+}
+.footer .drop-menu li:last-child {
+  order: 5;
+  border-radius: 5px 5px 0 0;
+  color: #999;
+  font-size: 0.5em;
+  padding: 0 0em 0.25em;
+  text-align: left;
+}
+.footer .dropdown:hover .drop-menu {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.footer .drop-menu li ~ li {
+  border-bottom: 1px dotted rgba(0,0,0,0.1);
+}
+/* MOBILE MENU */
+.mobile-menu-check,
+.show-mobile-menu {
+  display: none;
+}
+/* MEDIA QUERIES */
+
+@media (max-width: 800px) {
+  .footer .footer-nav{
+    display: none;
+  }
+  html {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  /* HEADER STYLES */
+  .header-nav {
+    padding: 2vh 1em 0 0;
+  }
+  .header-nav > li {
+    margin-left: 0.25em;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0.5vw;
+    bottom: 33px;
+  }
+  .header-nav > li ~ li {
+    padding-left: 0.25em;
+  }
+  .nav-links a {
+    font-size: 0.75em;
+  }
+  .header-logo {
+    left: auto;
+  }
+  
+  /* HOME STYLES */
+  .home-callout {
+    flex-direction: column;
+  }
+  .callout-copy {
+    flex: 1;
+  }
+  .bio-box {
+    float: none;
+    font-size: 1.3rem;
+    width: auto;
+  }
+  /* BLOG STYLES */
+  .post-aside {
+    display: none;
+  }
+  .blog-recent {
+    /*display: none; */
+    text-align: center;
+  }
+  .col-two {
+    flex-direction: column-reverse;
+  }
+  .blog-previews {
+    padding: 0;
+  }
+  /*GALLERY STYLES */
+  .gallery {
+    flex-direction: column;
+  }
+  .gallery .col {
+    padding: 1em;
+  }
+  .gallery .gallery-thumbs {
+    flex: 1;
+    height: auto;
+    white-space: nowrap;
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .gallery-thumbs > div {
+    display: inline-block;
+  }
+  .gallery-thumbs img {
+    height: 7vh;
+    margin: 0 10px 0 0;
+    width: auto;
+  }
+  .gallery .gallery-info {
+    flex: 1;
+  }
+  .gallery-photo {
+    /* not great but will do */
+    right: 10px;
+  }
+  /* MOBILE MENU */
+  .show-mobile-menu {
+    display: block;
+    float: right;
+    margin-top: 2vh;
+    padding: 1.5em;
+    position: relative;
+  }
+  .header-nav {
+    background-color: #444;
+    box-sizing: border-box;
+    height: 0;
+    left: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 10vh;
+    transition: all 0.5s ease-in-out;
+    width: 100vw;
+    z-index: 9;
+  }
+  .header-nav li{
+    display: block;
+    margin-top: 1em;
+  }
+  .header-nav li ~ li {
+    border: 0;
+    padding: 0;
+  }
+  .header-nav li:last-child {
+    margin-bottom: 1em;
+  }
+  .header-nav li:first-child a {
+    color: #fff;
+  }
+  /* HIDE DROPDOWN IN NAV MENU */
+  .header-nav .dropdown:hover .drop-menu,
+  .header-nav .drop-trigger:after {
+    display: none;
+  }
+  .header-nav .drop-trigger {
+    padding-right: 0;
+  }
+  .mobile-menu-check:checked ~ .header-nav {
+    height: 9em;
+  }
+  /* makes sure .show-mobile is after .check in html for it to work */
+  .mobile-menu-check:checked ~ .show-mobile-menu:after {
+    background-color: #000;
+    color: #ed6e2f;
+    content: "CLOSE";
+    left: 0;
+    position: absolute;
+    top: 1.5em;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .half-hero {
+    display: none;
+  }
+}
+
 /* TEST BOX */
 
 .test-box {

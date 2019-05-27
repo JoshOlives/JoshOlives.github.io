@@ -509,7 +509,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .gallery-thumbs img:hover {
     opacity: 1;
-    width: 50%;
+    /*width: 50%;  SO FUCKING ANNOYING*/
 }
 .gallery-thumbs .current img {
     box-shadow: 0 0 0 5px #ed6e2f;

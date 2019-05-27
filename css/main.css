@@ -54,9 +54,12 @@ body {
     padding-top: 10vh;
     width: 100%;
 }
+
+/* debugging
 .content-container:active{
 background-color: red;
 }
+*/
 html {
     /*font-size: 18px;*/
     /* why is there an annoying line of space between box shadow and body!important!important?!important */
@@ -65,9 +68,11 @@ html {
     /*position: absolute;
     z-index: 50;*/
 }
+/* debuggin
 html:active {
     box-shadow: none;
 }
+*/
 h2~p {
     font-size: 0.8em;
     font-style: italic;
@@ -94,7 +99,8 @@ h1,h2,h3,h4,h5,h6 {
     width: 100%;
     z-index: 50;
 }
-/*.header:active {
+/* debugging
+.header:active {
     display: none;
 }*/
 .header-logo {
@@ -308,10 +314,11 @@ h1,h2,h3,h4,h5,h6 {
 
 /* HERO STYLES */
 
+/* debuggin
 .full-hero:active {
     background-image: none;
 }
-
+*/
 .full-hero {
     /*position: relative;*/
     /*width: 100%; not needed with home wrapper */

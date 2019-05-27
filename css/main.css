@@ -634,7 +634,7 @@ h1,h2,h3,h4,h5,h6 {
   position: relative;
 }
 .dropdown:hover .drop-menu {
-  display:block;
+  height: 69.56px;
 }
 /* why cant do drop-trigger:hover?? */
 .dropdown:hover .drop-trigger:after {
@@ -657,17 +657,25 @@ h1,h2,h3,h4,h5,h6 {
 }
 .drop-menu {
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
-  display: none;
+  height: 0;
+  overflow: hidden;
   list-style: none;
   padding: 1em 0 0;
   position: absolute;
   right: 0;
   z-index: 9;
   border-radius: 0 0 5px 5px;
+  transition: all 0.15s ease-in-out;
 }
-.drop-menu:before {
-  border: 0.6em solid;
+.dropdown:hover .drop-menu:before {
+  transition: all 0.1s ease-in-out;
   border-color: transparent transparent #fff;
+}
+
+.drop-menu:before {
+  transition: all 0.23s ease-in-out;
+  border: 0.6em solid;
+  border-color: transparent;
   content:"";
   height: 0;
   position: absolute;
